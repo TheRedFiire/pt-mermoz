@@ -23,6 +23,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Ajout de package-lock.json au gitignore
-package-lock.json

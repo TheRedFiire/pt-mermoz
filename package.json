@@ -1,7 +1,7 @@
 {
-  "name": "ptsi-dorian",
+  "name": "pt-mermoz",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -20,6 +20,8 @@
     "date-fns": "^2.30.0",
     "express-rate-limit": "^7.1.5",
     "framer-motion": "^10.16.4",
+    "pt-mermoz": "file:",
+    "ptsi-dorian": "file:",
     "react": "^18.2.0",
     "react-blur": "^1.1.1",
     "react-dom": "^18.2.0",
