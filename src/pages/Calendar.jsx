@@ -51,7 +51,7 @@ const TimeTable = () => {
   useEffect(() => {
     const loadWeekData = async () => {
       try {
-        const response = await fetch("/config/week.json");
+        const response = await fetch("/pt-mermoz/config/week.json");
         const data = await response.json();
         setWeekData(data);
       } catch (error) {

@@ -7,8 +7,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Calendar />} />
-        <Route path="*" element={<NotFoundPage />} /> {/* This will handle any undefined paths */}
+        <Route path="/pt-mermoz/" element={<Calendar />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
