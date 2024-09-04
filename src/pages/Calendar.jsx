@@ -118,7 +118,7 @@ const TimeTable = () => {
 
   function isCoursePassed(day, endTime) {
     const today = new Date();
-    const currentDayOfWeek = today.getDay(); // 0 (Sunday) to 6 (Saturday)
+    const currentDayOfWeek = today.getDay() - 1;
     const targetDayOfWeek = daysOfWeek.indexOf(day);
 
     // Si le cours est un autre jour de la semaine
@@ -187,7 +187,9 @@ const TimeTable = () => {
             } items-center cursor-pointer z-auto`}
             onClick={() => handleDayChange(index)}
           >
-            <span className={`text-sm text-gray-400`}>{day.slice(0, 2)}</span>
+            <span className={`text-base ${index === currentDayIndex ? "text-white" : "text-gray-600"}`}>
+              {day.slice(0, 2)}
+            </span>
           </button>
         ))}
       </div>
