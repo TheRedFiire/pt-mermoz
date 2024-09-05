@@ -1,113 +1,102 @@
 {
-    "days": [
-      {
-        "day": "Lundi",
-        "tasks": [
-            {
-                "start": "8:00",
-                "end": "10:00",
-                "subject": "Maths",
-                "professor": "Payrau",
-                "room": "C3-102",
-                "color": "#f0593f",
-                "group": "ABC",
-                "number": "12",
-                "week": "AB"
-            },
-            {
-                "start": "10:00",
-                "end": "12:00",
-                "subject": "Physique-Chimie",
-                "professor": "Danjou",
-                "room": "C3-102",
-                "color": "#E1AB20",
-                "group": "ABC",
-                "number": "12",
-                "week": "AB"
-            },
-            {
-                "start": "12:30",
-                "end": "15:00",
-                "subject": "TP SI",
-                "professor": "Pinault",
-                "room": "B Prépa-SI (labo)",
-                "color": "#22659c",
-                "group": "C",
-                "number": "12",
-                "week": "AB"
-            },
-            {
-                "start": "13:00",
-                "end": "15:00",
-                "subject": "TD SI",
-                "professor": "Sollner",
-                "room": "B Prépa-SI (labo)",
-                "color": "#22659c",
-                "group": "ABC",
-                "number": "1",
-                "week": "AB"
-            },
-            {
-                "start": "15:00",
-                "end": "17:00",
-                "subject": "TD SI",
-                "professor": "Sollner",
-                "room": "B Prépa-SI (labo)",
-                "color": "#22659c",
-                "group": "ABC",
-                "number": "2",
-                "week": "AB"
-            },
-            {
-                "start": "17:00",
-                "end": "19:00",
-                "subject": "TIPE",
-                "professor": "",
-                "room": "C3-102",
-                "color": "#16a34a",
-                "group": "ABC",
-                "number": "12",
-                "week": "AB"
-            }
-        ]
-      },
-      {
-        "day": "Mardi",
-        "tasks": [
-            {
-                "start": "8:00",
-                "end": "10:00",
-                "subject": "Maths",
-                "professor": "Payrau",
-                "room": "C3-102",
-                "color": "#f0593f",
-                "group": "ABC",
-                "number": "12",
-                "week": "AB"
-            },
-            {
-                "start": "10:00",
-                "end": "12:00",
-                "subject": "Anglais",
-                "professor": "Archinard-Piquet",
-                "room": "C3-102",
-                "color": "#c026d3",
-                "group": "ABC",
-                "number": "12",
-                "week": "AB"
-            },
-            {
-                "start": "12:00",
-                "end": "13:00",
-                "subject": "TD Maths",
-                "professor": "Payrau",
-                "room": "C3-102",
-                "color": "#f0593f",
-                "group": "ABC",
-                "number": "2",
-                "week": "A"
-            },
-            {
+  "days": [
+    {
+      "day": "Lundi",
+      "tasks": [
+          {
+              "start": "8:00",
+              "end": "10:00",
+              "subject": "Maths",
+              "professor": "Payrau",
+              "room": "C3-102",
+              "color": "#f0593f",
+              "group": "ABC",
+              "number": "12",
+              "week": "AB"
+          },
+          {
+              "start": "10:00",
+              "end": "12:00",
+              "subject": "Physique-Chimie",
+              "professor": "Danjou",
+              "room": "C3-102",
+              "color": "#E1AB20",
+              "group": "ABC",
+              "number": "12",
+              "week": "AB"
+          },
+          {
+              "start": "12:30",
+              "end": "15:00",
+              "subject": "TP SI",
+              "professor": "Pinault",
+              "room": "B Prépa-SI (labo)",
+              "color": "#22659c",
+              "group": "C",
+              "number": "12",
+              "week": "AB"
+          },
+          {
+              "start": "13:00",
+              "end": "15:00",
+              "subject": "TD SI",
+              "professor": "Sollner",
+              "room": "B Prépa-SI (labo)",
+              "color": "#22659c",
+              "group": "ABC",
+              "number": "1",
+              "week": "AB"
+          },
+          {
+              "start": "15:00",
+              "end": "17:00",
+              "subject": "TD SI",
+              "professor": "Sollner",
+              "room": "B Prépa-SI (labo)",
+              "color": "#22659c",
+              "group": "ABC",
+              "number": "2",
+              "week": "AB"
+          },
+          {
+              "start": "17:00",
+              "end": "19:00",
+              "subject": "TIPE",
+              "professor": "",
+              "room": "C3-102",
+              "color": "#16a34a",
+              "group": "ABC",
+              "number": "12",
+              "week": "AB"
+          }
+      ]
+    },
+    {
+      "day": "Mardi",
+      "tasks": [
+          {
+              "start": "8:00",
+              "end": "10:00",
+              "subject": "Maths",
+              "professor": "Payrau",
+              "room": "C3-102",
+              "color": "#f0593f",
+              "group": "ABC",
+              "number": "12",
+              "week": "AB"
+          },
+          {
+              "start": "10:00",
+              "end": "12:00",
+              "subject": "Anglais",
+              "professor": "Archinard-Piquet",
+              "room": "C3-102",
+              "color": "#c026d3",
+              "group": "ABC",
+              "number": "12",
+              "week": "AB"
+          },
+          {
               "start": "12:00",
               "end": "13:00",
               "subject": "TD Maths",
@@ -115,256 +104,278 @@
               "room": "C3-102",
               "color": "#f0593f",
               "group": "ABC",
-              "number": "1",
-              "week": "B"
+              "number": "2",
+              "week": "A"
           },
-            {
-              "start": "14:00",
-              "end": "15:00",
-              "subject": "Cours Info",
-              "professor": "Payrau",
-              "room": "C3-102, C3-302, C3-304",
-              "color": "#ff8b94",
-              "group": "ABC",
-              "number": "12",
-              "week": "AB"
-            },
-            {
-              "start": "15:00",
-              "end": "16:00",
-              "subject": "TD Maths",
-              "professor": "Payrau",
-              "room": "C3-102",
-              "color": "#f0593f",
-              "group": "ABC",
-              "number": "1",
-              "week": "A"
-            },
-            {
-              "start": "15:00",
-              "end": "16:00",
-              "subject": "TD Maths",
-              "professor": "Payrau",
-              "room": "C3-102",
-              "color": "#f0593f",
-              "group": "ABC",
-              "number": "2",
-              "week": "B"
-            },
-            {
-              "start": "15:00",
-              "end": "17:00",
-              "subject": "TD Physique",
-              "professor": "Danjou",
-              "room": "C3-102",
-              "color": "#E1AB20",
-              "group": "ABC",
-              "number": "2",
-              "week": "A"
-            },
-            {
-              "start": "15:00",
-              "end": "17:00",
-              "subject": "TD Physique",
-              "professor": "Danjou",
-              "room": "C3-102",
-              "color": "#E1AB20",
-              "group": "ABC",
-              "number": "1",
-              "week": "B"
-            },
-            {
-              "start": "17:00",
-              "end": "19:00",
-              "subject": "TD Physique",
-              "professor": "Danjou",
-              "room": "C3-102",
-              "color": "#E1AB20",
-              "group": "ABC",
-              "number": "1",
-              "week": "A"
-            },
-            {
-              "start": "17:00",
-              "end": "19:00",
-              "subject": "TD Physique",
-              "professor": "Danjou",
-              "room": "C3-102",
-              "color": "#E1AB20",
-              "group": "ABC",
-              "number": "2",
-              "week": "B"
-            }
-        ]
-      },
-      {
-        "day": "Mercredi",
-        "tasks": [
           {
-            "start": "8:00",
-            "end": "10:00",
-            "subject": "Cours SI",
-            "professor": "Sollner",
+            "start": "12:00",
+            "end": "13:00",
+            "subject": "TD Maths",
+            "professor": "Payrau",
             "room": "C3-102",
-            "color": "#22659c",
+            "color": "#f0593f",
             "group": "ABC",
-            "number": "12",
-            "week": "AB"
-          },
-          {
-            "start": "10:00",
-            "end": "12:00",
-            "subject": "Physique-Chimie",
-            "professor": "Danjou",
-            "room": "C3-102",
-            "color": "#E1AB20",
-            "group": "ABC",
-            "number": "12",
-            "week": "AB"
-          },
-          {
-            "start": "13:30",
-            "end": "16:00",
-            "subject": "TP SI",
-            "professor": "Sollner",
-            "room": "B Prépa-SI (labo)",
-            "color": "#22659c",
-            "group": "A",
-            "number": "12",
-            "week": "AB"
-          },
+            "number": "1",
+            "week": "B"
+        },
           {
             "start": "14:00",
-            "end": "16:00",
-            "subject": "TP Physique",
-            "professor": "Danjou",
-            "room": "A201-A205",
-            "color": "#E1AB20",
-            "group": "ABC",
-            "number": "2",
-            "week": "AB"
-          },
-          {
-            "start": "16:00",
-            "end": "18:00",
-            "subject": "TP Physique",
-            "professor": "Danjou",
-            "room": "A201-A205",
-            "color": "#E1AB20",
-            "group": "ABC",
-            "number": "1",
-            "week": "AB"
-          }
-        ]
-      },
-      {
-        "day": "Jeudi",
-        "tasks": [
-          {
-            "start": "8:00",
-            "end": "10:00",
-            "subject": "TD Maths",
-            "professor": "Payrau",
-            "room": "C3-102",
-            "color": "#f0593f",
-            "group": "ABC",
-            "number": "2",
-            "week": "AB"
-          },
-          {
-            "start": "10:00",
-            "end": "12:00",
-            "subject": "TD Maths",
-            "professor": "Payrau",
-            "room": "C3-102",
-            "color": "#f0593f",
-            "group": "ABC",
-            "number": "1",
-            "week": "AB"
-          },
-          {
-            "start": "8:00",
-            "end": "10:00",
-            "subject": "TD SI",
-            "professor": "Sollner",
-            "room": "B Prépa-SI (labo)",
-            "color": "#22659c",
-            "group": "ABC",
-            "number": "1",
-            "week": "AB"
-          },
-          {
-            "start": "10:00",
-            "end": "12:00",
-            "subject": "TD SI",
-            "professor": "Sollner",
-            "room": "B Prépa-SI (labo)",
-            "color": "#22659c",
-            "group": "ABC",
-            "number": "2",
-            "week": "AB"
-          },
-          {
-            "start": "12:30",
             "end": "15:00",
-            "subject": "TP SI",
-            "professor": "Sollner",
-            "room": "B Prépa-SI (labo)",
-            "color": "#22659c",
-            "group": "B",
+            "subject": "Cours Info",
+            "professor": "Payrau",
+            "room": "C3-102, C3-302, C3-304",
+            "color": "#ff8b94",
+            "group": "ABC",
             "number": "12",
             "week": "AB"
           },
           {
             "start": "15:00",
-            "end": "17:00",
-            "subject": "TD Info",
-            "professor": "Payrau",
-            "room": "C3-304",
-            "color": "#ff8b94",
-            "group": "ABC",
-            "number": "12",
-            "week": "AB"
-          }
-        ]
-      },
-      {
-        "day": "Vendredi",
-        "tasks": [
-          {
-            "start": "8:00",
-            "end": "10:00",
-            "subject": "Maths",
+            "end": "16:00",
+            "subject": "TD Maths",
             "professor": "Payrau",
             "room": "C3-102",
             "color": "#f0593f",
             "group": "ABC",
-            "number": "12",
-            "week": "AB"
+            "number": "1",
+            "week": "A"
           },
           {
-            "start": "10:00",
-            "end": "12:00",
-            "subject": "Français",
-            "room": "C3-102",
-            "professor": "Ferre",
-            "color": "#744700",
-            "group": "ABC",
-            "number": "12",
-            "week": "AB"
-          },
-          {
-            "start": "14:00",
+            "start": "15:00",
             "end": "16:00",
-            "subject": "Devoir surveillé",
-            "room": "C2-101",
-            "professor": "",
-            "color": "#ff7000",
+            "subject": "TD Maths",
+            "professor": "Payrau",
+            "room": "C3-102",
+            "color": "#f0593f",
             "group": "ABC",
-            "number": "12",
-            "week": "AB"
+            "number": "2",
+            "week": "B"
+          },
+          {
+            "start": "15:00",
+            "end": "17:00",
+            "subject": "TD Physique",
+            "professor": "Danjou",
+            "room": "C3-102",
+            "color": "#E1AB20",
+            "group": "ABC",
+            "number": "2",
+            "week": "A"
+          },
+          {
+            "start": "15:00",
+            "end": "17:00",
+            "subject": "TD Physique",
+            "professor": "Danjou",
+            "room": "C3-102",
+            "color": "#E1AB20",
+            "group": "ABC",
+            "number": "1",
+            "week": "B"
+          },
+          {
+            "start": "17:00",
+            "end": "19:00",
+            "subject": "TD Physique",
+            "professor": "Danjou",
+            "room": "C3-102",
+            "color": "#E1AB20",
+            "group": "ABC",
+            "number": "1",
+            "week": "A"
+          },
+          {
+            "start": "17:00",
+            "end": "19:00",
+            "subject": "TD Physique",
+            "professor": "Danjou",
+            "room": "C3-102",
+            "color": "#E1AB20",
+            "group": "ABC",
+            "number": "2",
+            "week": "B"
           }
-        ]
-      }
-    ]
+      ]
+    },
+    {
+      "day": "Mercredi",
+      "tasks": [
+        {
+          "start": "8:00",
+          "end": "10:00",
+          "subject": "Cours SI",
+          "professor": "Sollner",
+          "room": "C3-102",
+          "color": "#22659c",
+          "group": "ABC",
+          "number": "12",
+          "week": "AB"
+        },
+        {
+          "start": "10:00",
+          "end": "12:00",
+          "subject": "Physique-Chimie",
+          "professor": "Danjou",
+          "room": "C3-102",
+          "color": "#E1AB20",
+          "group": "ABC",
+          "number": "12",
+          "week": "AB"
+        },
+        {
+          "start": "13:30",
+          "end": "16:00",
+          "subject": "TP SI",
+          "professor": "Sollner",
+          "room": "B Prépa-SI (labo)",
+          "color": "#22659c",
+          "group": "A",
+          "number": "12",
+          "week": "AB"
+        },
+        {
+          "start": "14:00",
+          "end": "16:00",
+          "subject": "TP Physique",
+          "professor": "Danjou",
+          "room": "A201-A205",
+          "color": "#E1AB20",
+          "group": "ABC",
+          "number": "2",
+          "week": "AB"
+        },
+        {
+          "start": "16:00",
+          "end": "18:00",
+          "subject": "TP Physique",
+          "professor": "Danjou",
+          "room": "A201-A205",
+          "color": "#E1AB20",
+          "group": "ABC",
+          "number": "1",
+          "week": "AB"
+        }
+      ]
+    },
+    {
+      "day": "Jeudi",
+      "tasks": [
+        {
+          "start": "8:00",
+          "end": "10:00",
+          "subject": "TD Maths",
+          "professor": "Payrau",
+          "room": "C3-102",
+          "color": "#f0593f",
+          "group": "ABC",
+          "number": "2",
+          "week": "AB"
+        },
+        {
+          "start": "10:00",
+          "end": "12:00",
+          "subject": "TD Maths",
+          "professor": "Payrau",
+          "room": "C3-102",
+          "color": "#f0593f",
+          "group": "ABC",
+          "number": "1",
+          "week": "AB"
+        },
+        {
+          "start": "8:00",
+          "end": "10:00",
+          "subject": "TD SI",
+          "professor": "Sollner",
+          "room": "B Prépa-SI (labo)",
+          "color": "#22659c",
+          "group": "ABC",
+          "number": "1",
+          "week": "AB"
+        },
+        {
+          "start": "10:00",
+          "end": "12:00",
+          "subject": "TD SI",
+          "professor": "Sollner",
+          "room": "B Prépa-SI (labo)",
+          "color": "#22659c",
+          "group": "ABC",
+          "number": "2",
+          "week": "AB"
+        },
+        {
+          "start": "12:30",
+          "end": "15:00",
+          "subject": "TP SI",
+          "professor": "Sollner",
+          "room": "B Prépa-SI (labo)",
+          "color": "#22659c",
+          "group": "B",
+          "number": "12",
+          "week": "AB"
+        },
+        {
+          "start": "15:00",
+          "end": "17:00",
+          "subject": "TD Info",
+          "professor": "Payrau",
+          "room": "C3-304",
+          "color": "#ff8b94",
+          "group": "ABC",
+          "number": "2",
+          "week": "A"
+        },
+        {
+          "start": "15:00",
+          "end": "17:00",
+          "subject": "TD Info",
+          "professor": "Payrau",
+          "room": "C3-304",
+          "color": "#ff8b94",
+          "group": "ABC",
+          "number": "1",
+          "week": "B"
+        }
+      ]
+    },
+    {
+      "day": "Vendredi",
+      "tasks": [
+        {
+          "start": "8:00",
+          "end": "10:00",
+          "subject": "Maths",
+          "professor": "Payrau",
+          "room": "C3-102",
+          "color": "#f0593f",
+          "group": "ABC",
+          "number": "12",
+          "week": "AB"
+        },
+        {
+          "start": "10:00",
+          "end": "12:00",
+          "subject": "Français",
+          "room": "C3-102",
+          "professor": "Ferre",
+          "color": "#744700",
+          "group": "ABC",
+          "number": "12",
+          "week": "AB"
+        },
+        {
+          "start": "14:00",
+          "end": "18:00",
+          "subject": "Devoir surveillé",
+          "room": "C2-101",
+          "professor": "",
+          "color": "#ff7000",
+          "group": "ABC",
+          "number": "12",
+          "week": "AB"
+        }
+      ]
+    }
+  ]
 }
