@@ -323,8 +323,19 @@
             "room": "C3-304",
             "color": "#ff8b94",
             "group": "ABC",
-            "number": "12",
-            "week": "AB"
+            "number": "2",
+            "week": "A"
+          },
+          {
+            "start": "15:00",
+            "end": "17:00",
+            "subject": "TD Info",
+            "professor": "Payrau",
+            "room": "C3-304",
+            "color": "#ff8b94",
+            "group": "ABC",
+            "number": "1",
+            "week": "B"
           }
         ]
       },
@@ -355,7 +366,7 @@
           },
           {
             "start": "14:00",
-            "end": "16:00",
+            "end": "18:00",
             "subject": "Devoir surveillé",
             "room": "C2-101",
             "professor": "",
