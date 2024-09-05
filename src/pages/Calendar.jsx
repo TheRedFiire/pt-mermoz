@@ -244,7 +244,7 @@ const TimeTable = () => {
                       />
                     ))
                 ) : (
-                  <p>Chargement des tâches...</p>
+                  <p></p>
                 )}
               </div>
             </div>
