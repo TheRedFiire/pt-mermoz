@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Task from "../components/Task";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons"; // Import des icônes
 
 const daysOfWeek = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
 const hoursOfDay = Array.from({ length: 24 }, (_, index) => {
@@ -121,12 +121,10 @@ const TimeTable = () => {
     const currentDayOfWeek = today.getDay() - 1;
     const targetDayOfWeek = daysOfWeek.indexOf(day);
 
-    // Si le cours est un autre jour de la semaine
     if (targetDayOfWeek > currentDayOfWeek) {
       return false;
     }
 
-    // Si le cours est aujourd'hui
     if (targetDayOfWeek === currentDayOfWeek) {
       const [endHour, endMinutes] = endTime.split(":").map(Number);
       const courseDate = new Date(today);
@@ -134,16 +132,15 @@ const TimeTable = () => {
       return courseDate < today;
     }
 
-    // Si le cours était un jour précédent
     return true;
   }
 
   return (
-    <div className="container mx-auto my-4">
+    <div className={`container mx-auto my-4`}>
       <div className="flex flex-row md:space-y-0 space-x-0 md:space-x-4 justify-center items-center md:mb-4">
         <div className="flex flex-row pt-6 md:pt-0 space-x-2">
           <select
-            className="p-2 rounded border border-gray-300"
+            className="p-2 rounded border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             value={selectedGroup}
             onChange={(e) => setSelectedGroupWithStorage(e.target.value)}
           >
@@ -154,7 +151,7 @@ const TimeTable = () => {
             ))}
           </select>
           <select
-            className="p-2 rounded border border-gray-300"
+            className="p-2 rounded border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             value={selectedNumber}
             onChange={(e) => setSelectedNumberWithStorage(e.target.value)}
           >
@@ -165,7 +162,7 @@ const TimeTable = () => {
             ))}
           </select>
           <select
-            className="p-2 rounded border border-gray-300"
+            className="p-2 rounded border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             value={currentWeek}
             onChange={(e) => setSelectedWeekWithStorage(e.target.value)}
           >
@@ -178,7 +175,7 @@ const TimeTable = () => {
         </div>
       </div>
 
-      <div className="md:hidden flex flex-row flex-shrink-0 sticky top-0 w-full justify-between p-5 shadow-sm z-10 rounded-t-3xl bg-white">
+      <div className="md:hidden flex flex-row flex-shrink-0 sticky top-0 w-full justify-between p-5 shadow-sm z-10 rounded-t-3xl bg-white dark:bg-gray-800">
         {daysOfWeek.map((day, index) => (
           <button
             key={day}
@@ -187,7 +184,11 @@ const TimeTable = () => {
             } items-center cursor-pointer z-auto`}
             onClick={() => handleDayChange(index)}
           >
-            <span className={`text-base ${index === currentDayIndex ? "text-white" : "text-gray-600"}`}>
+            <span
+              className={`text-base ${
+                index === currentDayIndex ? "text-white" : "text-gray-600 dark:text-gray-300"
+              }`}
+            >
               {day.slice(0, 2)}
             </span>
           </button>
@@ -195,9 +196,12 @@ const TimeTable = () => {
       </div>
 
       <div className="md:m-0 flex m-2">
-        <div className="hidden md:flex flex-col bg-white text-right p-2 mr-4 pt-12">
+        <div className="hidden md:flex flex-col bg-white dark:bg-gray-800 text-right p-2 mr-4 pt-7">
           {filteredHoursOfDay.map((hour) => (
-            <div key={hour} className="h-12 flex items-center justify-end pr-2 text-gray-400">
+            <div
+              key={hour}
+              className="h-12 flex items-center justify-end pr-2 text-gray-400 dark:text-gray-200"
+            >
               {hour}
             </div>
           ))}
@@ -207,18 +211,18 @@ const TimeTable = () => {
           {daysOfWeek.map((day, index) => (
             <div
               key={day}
-              className={`bg-white rounded-lg border transform transition duration-500 ${
+              className={`bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-600 transform transition duration-500 ${
                 index === currentDayIndex ? "block" : "hidden md:block"
               }`}
             >
-              <h2 className="text-xl font-bold text-gray-700 p-2 border-b mb-2">
+              <h2 className="text-xl font-bold text-gray-700 dark:text-gray-200 p-2 border-b mb-2">
                 {day}
               </h2>
               <div className="relative">
                 {filteredHoursOfDay.map((hour) => (
                   <div
                     key={`${day}-${hour}`}
-                    className="h-12 border-t flex items-center bg-gray-100"
+                    className="h-12 border-t dark:border-gray-600 flex items-center bg-gray-100 dark:bg-gray-700"
                   ></div>
                 ))}
                 {weeklyTasks.length > 0 ? (

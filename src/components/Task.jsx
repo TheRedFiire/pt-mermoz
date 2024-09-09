@@ -71,7 +71,7 @@ const Task = ({ start, end, subject, professor, room, color, passed }) => {
 
   return (
     <div
-      className={`absolute left-0 w-full border border-white text-white ${finalColor} ${
+      className={`absolute left-0 w-full border border-white dark:border-transparent text-white ${finalColor} ${
         passed ? "opacity-50" : ""
       } shadow-lg rounded-lg p-2 transition-all duration-300 flex flex-col justify-center`}
       style={{
