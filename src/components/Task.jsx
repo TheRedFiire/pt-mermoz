@@ -54,12 +54,16 @@ const Task = ({ start, end, subject, professor, room, color, passed }) => {
 
   const subjectIcon = {
     "Maths": faSquareRootVariable,
+    "Math": faSquareRootVariable,
     "TD Maths": faSquareRootVariable,
     "Physique-Chimie": faFlask,
     "TD Physique": faFlask,
     "TP Physique": faFlask,
+    "Physique": faFlask,
     "Français": faBook,
+    "Francais": faBook,
     "Info": faLaptopCode,
+    "SI": faGears,
     "Cours SI": faGears,
     "TD SI": faGears,
     "TP SI": faGears,

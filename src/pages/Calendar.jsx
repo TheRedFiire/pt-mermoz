@@ -12,15 +12,16 @@ const hoursOfDay = Array.from({ length: 24 }, (_, index) => {
 const filteredHoursOfDay = hoursOfDay.filter((hour) => !hour.includes(":30"));
 
 const TimeTable = () => {
-  const [selectedGroup, setSelectedGroup] = useState(
-    localStorage.getItem("selectedGroup") || "A"
+  const [selectedColleGroup, setSelectedColleGroup] = useState(
+    localStorage.getItem("selectedColleGroup") || "G1A1"
   );
-  const [selectedNumber, setSelectedNumber] = useState(
-    localStorage.getItem("selectedNumber") || "1"
-  );
+  const [selectedGroup, setSelectedGroup] = useState("A");
+  const [selectedNumber, setSelectedNumber] = useState("1");
   const [weekData, setWeekData] = useState([]);
   const [weeklyTasks, setWeeklyTasks] = useState([]);
+  const [colleTasks, setColleTasks] = useState([]); // Nouvelle variable pour les colles
   const [currentDayIndex, setCurrentDayIndex] = useState(new Date().getDay() - 1);
+  const [colloscopeData, setColloscopeData] = useState([]);
 
   // Détermination de la semaine A ou B
   const getWeekParity = () => {
@@ -28,7 +29,6 @@ const TimeTable = () => {
     return currentWeekNumber % 2 === 0 ? "A" : "B";
   };
 
-  // Fonction pour obtenir le numéro de la semaine dans l'année
   const getWeekNumber = (date) => {
     const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
     const pastDaysOfYear = (date - firstDayOfYear) / 86400000;
@@ -38,13 +38,13 @@ const TimeTable = () => {
   const [currentWeek, setCurrentWeek] = useState(getWeekParity());
 
   useEffect(() => {
-    const savedGroup = localStorage.getItem("selectedGroup");
-    if (savedGroup) {
-      setSelectedGroup(savedGroup);
-    }
-    const savedNumber = localStorage.getItem("selectedNumber");
-    if (savedNumber) {
-      setSelectedNumber(savedNumber);
+    const savedColleGroup = localStorage.getItem("selectedColleGroup");
+    if (savedColleGroup) {
+      setSelectedColleGroup(savedColleGroup);
+      const colle_group = selectedColleGroup
+      console.log(colle_group)
+      setSelectedNumber(colle_group.charAt(1));
+      setSelectedGroup(colle_group.charAt(2));
     }
   }, []);
 
@@ -54,6 +54,10 @@ const TimeTable = () => {
         const response = await fetch("/pt-mermoz/config/week.json");
         const data = await response.json();
         setWeekData(data);
+
+        const colloscopeResponse = await fetch("/pt-mermoz/documents/colloscope_data.json");
+        const colloscopeData = await colloscopeResponse.json();
+        setColloscopeData(colloscopeData); // Load colloscope data
       } catch (error) {
         console.error("Erreur lors du chargement des données JSON:", error);
       }
@@ -73,34 +77,51 @@ const TimeTable = () => {
           });
         });
       });
-      setWeeklyTasks(tasks);
+      setWeeklyTasks(tasks); // Stocker les tâches régulières
     }
   }, [weekData]);
 
-  const validateSelection = (group, number) => {
-    if (group === "C" && number === "1") {
-      return { group: "C", number: "2" };
-    }
-    if (group === "A" && number === "2") {
-      return { group: "A", number: "1" };
-    }
-    return { group, number };
+  const getMonday = (date) => {
+    const day = date.getDay(),
+      diff = date.getDate() - day + (day === 0 ? -6 : 1); // Ajuster si le jour est dimanche
+    const monday = new Date(date.setDate(diff));
+  
+    // Formater la date en yyyy-mm-dd
+    const year = monday.getFullYear();
+    const month = String(monday.getMonth() + 1).padStart(2, '0'); // Les mois commencent à 0
+    const dayOfMonth = String(monday.getDate()).padStart(2, '0');
+  
+    return `${year}-${month}-${dayOfMonth}`; // Format 'yyyy-mm-dd'
   };
+  
+  useEffect(() => {
+    const today = new Date();
+    const mondayDate = getMonday(today); // Obtenir la date du lundi au format yyyy-mm-dd
+  
+    if (colloscopeData.length > 0) {
+      const filteredColles = colloscopeData.filter((colle) =>
+        colle.groups.some((group, index) => 
+          group === selectedColleGroup && colle.dates[index] === mondayDate
+        )
+      );
+  
+      const collesTasks = filteredColles.map((colle) => ({
+        subject: colle.subject, // Retire le dernier caractère du sujet
+        professor: colle.professor,
+        room: colle.room,
+        start: colle.start,
+        end: colle.end,
+        day: colle.day,
+        color: colle.color,
+      }));
+  
+      setColleTasks(collesTasks); // Stocker les tâches des colles dans une variable séparée
+    }
+  }, [colloscopeData, selectedColleGroup]);
 
-  const setSelectedGroupWithStorage = (group) => {
-    const validated = validateSelection(group, selectedNumber);
-    setSelectedGroup(validated.group);
-    setSelectedNumber(validated.number);
-    localStorage.setItem("selectedGroup", validated.group);
-    localStorage.setItem("selectedNumber", validated.number);
-  };
-
-  const setSelectedNumberWithStorage = (number) => {
-    const validated = validateSelection(selectedGroup, number);
-    setSelectedGroup(validated.group);
-    setSelectedNumber(validated.number);
-    localStorage.setItem("selectedGroup", validated.group);
-    localStorage.setItem("selectedNumber", validated.number);
+  const setSelectedColleGroupsWithStorage = (colle_group) => {
+    setSelectedColleGroup(colle_group);
+    localStorage.setItem("selectedColleGroup", colle_group);
   };
 
   const setSelectedWeekWithStorage = (week) => {
@@ -112,9 +133,8 @@ const TimeTable = () => {
     setCurrentDayIndex(index);
   };
 
-  const groups = ["A", "B", "C"];
-  const numbers = ["1", "2"];
   const weeks = ["A", "B"]; // Semaine A ou B
+  const colle_groups = ["G1A1", "G1A2", "G1A3", "G1A4", "G1B1", "G1B2", "G1B3", "G2B4", "G2B5", "G2C1", "G2C2", "G2C3", "G2C4"]
 
   function isCoursePassed(day, endTime) {
     const today = new Date();
@@ -141,23 +161,12 @@ const TimeTable = () => {
         <div className="flex flex-row pt-6 md:pt-0 space-x-2">
           <select
             className="p-2 rounded border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-            value={selectedGroup}
-            onChange={(e) => setSelectedGroupWithStorage(e.target.value)}
+            value={selectedColleGroup}
+            onChange={(e) => setSelectedColleGroupsWithStorage(e.target.value)}
           >
-            {groups.map((group) => (
-              <option key={group} value={group}>
-                {group}
-              </option>
-            ))}
-          </select>
-          <select
-            className="p-2 rounded border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-            value={selectedNumber}
-            onChange={(e) => setSelectedNumberWithStorage(e.target.value)}
-          >
-            {numbers.map((number) => (
-              <option key={number} value={number}>
-                {number}
+            {colle_groups.map((colle_group) => (
+              <option key={colle_group} value={colle_group}>
+                {colle_group}
               </option>
             ))}
           </select>
@@ -219,37 +228,51 @@ const TimeTable = () => {
                 {day}
               </h2>
               <div className="relative">
-                {filteredHoursOfDay.map((hour) => (
-                  <div
-                    key={`${day}-${hour}`}
-                    className="h-12 border-t dark:border-gray-600 flex items-center bg-gray-100 dark:bg-gray-700"
-                  ></div>
+              {filteredHoursOfDay.map((hour) => (
+          <div
+            key={`${day}-${hour}`}
+            className="h-12 border-t dark:border-gray-600 flex items-center bg-gray-100 dark:bg-gray-700"
+          ></div>
+        ))}
+            {/* Afficher les tâches hebdomadaires */}
+              {weeklyTasks.length > 0 && weeklyTasks
+                .filter((task) => task.day === day)
+                .filter(
+                  (task) =>
+                    task.group.includes(selectedGroup) &&
+                    task.number.includes(selectedNumber) &&
+                    task.week.includes(currentWeek)
+                )
+                .map((task) => (
+                  <Task
+                    key={`${task.day}-${task.start}-${task.end}-${task.subject}`}
+                    day={day}
+                    start={task.start}
+                    end={task.end}
+                    subject={task.subject}
+                    professor={task.professor}
+                    room={task.room}
+                    color={task.color}
+                    passed={isCoursePassed(task.day, task.end)}
+                  />
                 ))}
-                {weeklyTasks.length > 0 ? (
-                  weeklyTasks
-                    .filter((task) => task.day === day)
-                    .filter(
-                      (task) =>
-                        task.group.includes(selectedGroup) &&
-                        task.number.includes(selectedNumber) &&
-                        task.week.includes(currentWeek)
-                    )
-                    .map((task) => (
-                      <Task
-                        key={`${task.day}-${task.start}-${task.end}-${task.subject}`}
-                        day={day}
-                        start={task.start}
-                        end={task.end}
-                        subject={task.subject}
-                        professor={task.professor}
-                        room={task.room}
-                        color={task.color}
-                        passed={isCoursePassed(task.day, task.end)}
-                      />
-                    ))
-                ) : (
-                  <p>...</p>
-                )}
+
+              {/* Afficher les colles */}
+              {colleTasks.length > 0 && colleTasks
+                .filter((task) => task.day === day)
+                .map((task) => (
+                  <Task
+                    key={`${task.day}-${task.start}-${task.end}-${task.subject}`}
+                    day={day}
+                    start={task.start}
+                    end={task.end}
+                    subject={task.subject.slice(0, -1)}
+                    professor={task.professor}
+                    room={task.room}
+                    color={task.color}
+                    passed={isCoursePassed(task.day, task.end)}
+                  />
+              ))}
               </div>
             </div>
           ))}
