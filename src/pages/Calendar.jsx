@@ -41,10 +41,8 @@ const TimeTable = () => {
     const savedColleGroup = localStorage.getItem("selectedColleGroup");
     if (savedColleGroup) {
       setSelectedColleGroup(savedColleGroup);
-      const colle_group = selectedColleGroup
-      console.log(colle_group)
-      setSelectedNumber(colle_group.charAt(1));
-      setSelectedGroup(colle_group.charAt(2));
+      setSelectedNumber(selectedColleGroup.charAt(1));
+      setSelectedGroup(selectedColleGroup.charAt(2));
     }
   }, []);
 
@@ -122,6 +120,8 @@ const TimeTable = () => {
   const setSelectedColleGroupsWithStorage = (colle_group) => {
     setSelectedColleGroup(colle_group);
     localStorage.setItem("selectedColleGroup", colle_group);
+    setSelectedNumber(colle_group.charAt(1));
+    setSelectedGroup(colle_group.charAt(2));
   };
 
   const setSelectedWeekWithStorage = (week) => {
